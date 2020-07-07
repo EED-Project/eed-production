@@ -26,8 +26,8 @@ DB_HOST = os.getenv('EED_DB_HOST', 'postgres.c8ekyftlivj0.us-east-2.rds.amazonaw
 DB_USER = os.getenv('EED_DB_USER', 'postgres')
 DB_PASS = os.getenv('EED_DB_PASS', 'postgres')
 
-START_YEAR = int(os.getenv('EED_START_YEAR', '1969'))
-END_YEAR = int(os.getenv('EED_END_YEAR', '2019'))
+START_YEAR = int(os.getenv('EED_START_YEAR', '1979'))
+END_YEAR = int(os.getenv('EED_END_YEAR', '2015'))
 
 # Function that returns the country_id corresponding to the country name
 def country_translation(name):
@@ -127,6 +127,8 @@ def retrieve_external_data(start_year=START_YEAR, end_year=END_YEAR):
     indicators = dict()
     for i in Indicator_table:
         indicators[i[0]] = i[1]
+
+    print(indicators)
 
     countries = [country[0] for country in Country_table]
 

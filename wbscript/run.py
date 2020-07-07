@@ -66,14 +66,14 @@ def aggregate_translate(name):
 # Function that pull data from .csv files and put them in global variables Indicator_tbale, Country_table, country_list, indicator_list
 def init_dataset():
     # create global Indicator_table from indicator.cfg
-    with open(os.path.join(SCRIPT_PATH, 'Mindicatorsmini.csv'), newline='') as f:
+    with open(os.path.join(SCRIPT_PATH, 'Mindicators.csv'), newline='') as f:
         reader = csv.reader(f)
         data = list(reader)
         global Indicator_table
         Indicator_table = data[1:]
 
     # create global Country_table from indicator.cfg
-    with open(os.path.join(SCRIPT_PATH, 'Mcountriesmini.csv'), newline='') as f:
+    with open(os.path.join(SCRIPT_PATH, 'Mcountries.csv'), newline='') as f:
         reader = csv.reader(f)
         data = list(reader)
         global Country_table

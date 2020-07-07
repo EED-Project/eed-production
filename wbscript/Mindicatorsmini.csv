@@ -1,0 +1,9 @@
+API_Code,IndicatorName,Identifier,ShortDefinition,Source,Topic
+EG.ELC.FOSL.ZS,"Electricity production from oil, gas and coal sources (% of total)",1140,Sources of electricity refer t,International Energy Agency (I,Environment: Energy production
+EG.ELC.HYRO.ZS,Electricity production from hydroelectric sources (% of total),1150,Sources of electricity refer t,International Energy Agency (I,Environment: Energy production
+EG.ELC.LOSS.ZS,Electric power transmission and distribution losses (% of output),1160,Electric power transmission an,International Energy Agency (I,Environment: Energy production
+SP.RUR.TOTL.ZG,Rural population growth (annual %),2230,Rural population refers to peo,Rural population refers to peo,World Bank Staff estimates bas
+SP.RUR.TOTL.ZS,Rural population (% of total population),2240,Rural population refers to peo,Rural population refers to peo,World Bank Staff estimates bas
+SP.URB.GROW,Urban population growth (annual %),2250,Urban population refers to peo,Urban population refers to peo,World Bank Staff estimates bas
+SP.URB.TOTL,Urban population,2260,Urban population refers to peo,Urban population refers to peo,World Bank Staff estimates bas
+SP.URB.TOTL.IN.ZS,Urban population (% of total),2270,Urban population refers to peo,Urban population refers to peo,"United Nations, World Urbaniza"

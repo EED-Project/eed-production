@@ -8,4 +8,6 @@ frontend_folder_path = os.path.join(
 app = create_app(static_folder=frontend_folder_path, static_url_path='')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+    #app.run(debug=True)

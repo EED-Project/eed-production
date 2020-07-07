@@ -26,8 +26,8 @@ DB_HOST = os.getenv('EED_DB_HOST', 'postgres.c8ekyftlivj0.us-east-2.rds.amazonaw
 DB_USER = os.getenv('EED_DB_USER', 'postgres')
 DB_PASS = os.getenv('EED_DB_PASS', 'postgres')
 
-START_YEAR = int(os.getenv('EED_START_YEAR', '2010'))
-END_YEAR = int(os.getenv('EED_END_YEAR', '2012'))
+START_YEAR = int(os.getenv('EED_START_YEAR', '1969'))
+END_YEAR = int(os.getenv('EED_END_YEAR', '2019'))
 
 # Function that returns the country_id corresponding to the country name
 def country_translation(name):

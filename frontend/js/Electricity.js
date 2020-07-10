@@ -40,12 +40,12 @@ let elsources = [
 rural_to_urban = [
     {
         "source": "Rural",
-        "indicator": '1020',
+        "indicator": '1110',
         "color": "#76EFFF"
     },
     {
         "source": "Urban",
-        "indicator": '1030',
+        "indicator": '1120',
         "color": "#2772FF"
     },
 ]
@@ -84,7 +84,7 @@ countryStatsPromise.then(function (stats) {
     update_simple_indicator(stats, '1260', '#electricity_cons');
     // - chart
     update_area_charts(stats, elcons_sources, "el-consumption__chart");
-    // Electricity Sources 
+    // Electricity Sources
     // - Treemap
     update_tree_chart(stats, elsources, "elsources_treemap", format_number_func = format_percentage)
     // - Chart

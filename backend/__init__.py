@@ -14,7 +14,7 @@ def create_app(**kwargs):
     # Configure by environment variables
     if os.getenv("EED_DB_NAME", None) or os.getenv("EED_DB_HOST", None):
         db_name = os.getenv("EED_DB_NAME", "test_worldbank")
-        db_host = os.getenv("EED_DB_HOST", "postgres.c8ekyftlivj0.us-east-2.rds.amazonaws.com")
+        db_host = os.getenv("EED_DB_HOST", "eeddatabase.cqahfk3m8kzy.eu-west-2.rds.amazonaws.com")
         db_user = os.getenv("EED_DB_USER", "postgres")
         db_pass = os.getenv("EED_DB_PASS", "postgres")
         app.config[

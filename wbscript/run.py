@@ -22,7 +22,7 @@ SCRIPT_PATH = os.path.dirname(os.path.realpath(__file__))
 # Configure by environment variables
 ROOTDB_NAME = os.getenv('EED_ROOTDB_NAME', 'postgres')
 DB_NAME = os.getenv('EED_DB_NAME', 'test_worldbank')
-DB_HOST = os.getenv('EED_DB_HOST', 'postgres.c8ekyftlivj0.us-east-2.rds.amazonaws.com')
+DB_HOST = os.getenv('EED_DB_HOST', 'eeddatabase.cqahfk3m8kzy.eu-west-2.rds.amazonaws.com')
 DB_USER = os.getenv('EED_DB_USER', 'postgres')
 DB_PASS = os.getenv('EED_DB_PASS', 'postgres')
 
@@ -66,7 +66,7 @@ def aggregate_translate(name):
 # Function that pull data from .csv files and put them in global variables Indicator_tbale, Country_table, country_list, indicator_list
 def init_dataset():
     # create global Indicator_table from indicator.cfg
-    with open(os.path.join(SCRIPT_PATH, 'Mindicators.csv'), newline='') as f:
+    with open(os.path.join(SCRIPT_PATH, 'Mindicatorsmini.csv'), newline='') as f:
         reader = csv.reader(f)
         data = list(reader)
         global Indicator_table
@@ -128,8 +128,6 @@ def retrieve_external_data(start_year=START_YEAR, end_year=END_YEAR):
     for i in Indicator_table:
         indicators[i[0]] = i[1]
 
-    print(indicators)
-
     countries = [country[0] for country in Country_table]
 
     res = wbdata.get_dataframe(indicators, country=countries, data_date=data_date)
@@ -137,8 +135,11 @@ def retrieve_external_data(start_year=START_YEAR, end_year=END_YEAR):
     json_res = res.to_dict('index')
 
     none_countries = []
-    for key, value in json_res.items():
+    longueur = len(json_res)
+    for i, (key, value) in enumerate(json_res.items()):
         country_id = country_translation(key[0])
+        print('iteration at {:0.2f}'.format((i+1)/longueur*100),end='\r')
+
         if country_id is None:
             none_countries.append(key)
             continue
@@ -300,7 +301,8 @@ def truncate_table(table_name):
 def insert_table(table_name, list_data):
     with psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST) as con:
         con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-        for item in list_data:
+        for i,item in enumerate(list_data):
+            print('seeding item {:0.2f}'.format(i/len(list_data)*100),end='\r')
             cur = con.cursor()
             column_name = str(tuple(item.keys()))
             value = tuple(item.values())

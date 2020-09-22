@@ -20,14 +20,14 @@ results = list()
 SCRIPT_PATH = os.path.dirname(os.path.realpath(__file__))
 
 # Configure by environment variables
-ROOTDB_NAME = os.getenv('EED_ROOTDB_NAME', 'postgres')
-DB_NAME = os.getenv('EED_DB_NAME', 'test_worldbank')
-DB_HOST = os.getenv('EED_DB_HOST', 'eeddatabase.cqahfk3m8kzy.eu-west-2.rds.amazonaws.com')
-DB_USER = os.getenv('EED_DB_USER', 'postgres')
-DB_PASS = os.getenv('EED_DB_PASS', 'postgres')
+ROOTDB_NAME = os.getenv('EED_ROOTDB_NAME', 'ompjvgphfcccsl')
+DB_NAME = os.getenv('EED_DB_NAME', 'df9egclbrc07pm')
+DB_HOST = os.getenv('EED_DB_HOST', 'ec2-54-160-202-3.compute-1.amazonaws.com')
+DB_USER = os.getenv('EED_DB_USER', 'ompjvgphfcccsl')
+DB_PASS = os.getenv('EED_DB_PASS', '12aac0929be8a501efc293dda0bb31d3c3263d0a267704ac8a5a852eab637564')
 
-START_YEAR = int(os.getenv('EED_START_YEAR', '1979'))
-END_YEAR = int(os.getenv('EED_END_YEAR', '2015'))
+START_YEAR = int(os.getenv('EED_START_YEAR', '2010'))
+END_YEAR = int(os.getenv('EED_END_YEAR', '2012'))
 
 # Function that returns the country_id corresponding to the country name
 def country_translation(name):

@@ -20,7 +20,7 @@ results = list()
 SCRIPT_PATH = os.path.dirname(os.path.realpath(__file__))
 
 # Configure by environment variables
-ROOTDB_NAME = os.getenv('EED_ROOTDB_NAME', 'ompjvgphfcccsl')
+ROOTDB_NAME = os.getenv('EED_ROOTDB_NAME', 'df9egclbrc07pm')
 DB_NAME = os.getenv('EED_DB_NAME', 'df9egclbrc07pm')
 DB_HOST = os.getenv('EED_DB_HOST', 'ec2-54-160-202-3.compute-1.amazonaws.com')
 DB_USER = os.getenv('EED_DB_USER', 'ompjvgphfcccsl')

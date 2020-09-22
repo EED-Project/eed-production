@@ -22,4 +22,5 @@ countryStatsPromise.then(function (stats) {
 
     // chart
     update_bar_charts(stats, gdp_gni_sources, 'GDP-and-GNI__chart');
+    update_bar_charts(stats, gdp_gni_sources, 'GDP-and-GNI__chart2');
 });

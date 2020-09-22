@@ -35,10 +35,9 @@ male_to_female_source = [
 countryStatsPromise.then(function (stats) {
     update_simple_indicator(stats, '2170', '#country_population');
 
-    demography_format = function (n) {
-        return format_number(n, million_suffix = 'm');
+    demography_format = function (n) { 
+        return format_number(n, million_suffix = 'm'); 
     }
-
     update_area_charts(stats, demography_sources, "demography__chart", format_number_func = demography_format);
 
     update_pair_douhnut(stats, rural_to_urban_source, "rural-to-urban__chart", format_number_func = format_percentage);

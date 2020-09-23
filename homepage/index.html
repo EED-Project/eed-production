@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LANDINGPAGE is a search application in the energy and economy database">
+
+    <title>LANDINGPAGE | Search in the energy and economy database</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./favicon.png" type="image/png">
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img width="82" height="33" src="./img/svg/logo.svg" alt="LANDINGPAGE logo">
+                </div>
+
+                <div class="nav-links">
+                    <div class="nav-link --icon">
+                        <a href="#" id="top-search-btn">
+                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.33329 14C8.81244 13.9997 10.249 13.5045 11.4141 12.5934L15.0775 16.2567L16.2558 15.0784L12.5925 11.415C13.5041 10.2497 13.9996 8.81288 14 7.33335C14 3.65752 11.0091 0.666687 7.33329 0.666687C3.65746 0.666687 0.666626 3.65752 0.666626 7.33335C0.666626 11.0092 3.65746 14 7.33329 14ZM7.33329 2.33335C10.0908 2.33335 12.3333 4.57585 12.3333 7.33335C12.3333 10.0909 10.0908 12.3334 7.33329 12.3334C4.57579 12.3334 2.33329 10.0909 2.33329 7.33335C2.33329 4.57585 4.57579 2.33335 7.33329 2.33335Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="nav-link">
+                        <a href="#">FAQ</a>
+                    </div>
+                    <div class="nav-link">
+                        <a href="#">About</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main id="main">
+        <div class="container">
+            <div id="main-content--homepage" class="main-content --homepage">
+                <div class="main-content__header">
+                    <h1 class="heading">Energy and Economy Database</h1>
+                    <h2 class="sub-heading">Visualization of Consolidated African Data</h2>
+                </div>
+                <div class="africa-map">
+                    <img src="./img/svg/africa-map.svg" alt="africa map">
+                </div>
+                <div class="main-content__search-box-outer">
+                    <div class="main-content__search-box">
+                        <label for="search-input">
+                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.33341 14C8.81256 13.9997 10.2491 13.5045 11.4142 12.5934L15.0776 16.2567L16.2559 15.0784L12.5926 11.415C13.5042 10.2497 13.9997 8.81288 14.0001 7.33335C14.0001 3.65752 11.0092 0.666687 7.33341 0.666687C3.65758 0.666687 0.666748 3.65752 0.666748 7.33335C0.666748 11.0092 3.65758 14 7.33341 14ZM7.33341 2.33335C10.0909 2.33335 12.3334 4.57585 12.3334 7.33335C12.3334 10.0909 10.0909 12.3334 7.33341 12.3334C4.57591 12.3334 2.33341 10.0909 2.33341 7.33335C2.33341 4.57585 4.57591 2.33335 7.33341 2.33335Z"
+                                    fill="#AFDDFF" fill-opacity="0.75" />
+                            </svg>
+                        </label>
+                        <input id="search-input" class="input --search" type="text" spellcheck="false"
+                            placeholder="Search a country/region...">
+
+                        <div id="suggestion-dropdown" class="suggestion-dropdown">
+                            <ul>
+                                <li>
+                                    <a href="#" data-sug="Republic of Congo">Republic of Congo</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-sug="República del Congo">República del Congo</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-sug="Democratic Republic of Congo">Democratic Republic of Congo</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-content__footer">
+                        <h3 class="suggestion-title">Suggestion:</h3>
+
+                        <div id="suggestion-list" class="suggestion-list">
+                            <a href="#" data-sug="Nigeria">Nigeria</a>
+                            <a href="#" data-sug="Ethiopia">Ethiopia</a>
+                            <a href="#" data-sug="Egypt">Egypt</a>
+                            <a class="--hide-xs" href="#" data-sug="Tanzania">Tanzania</a>
+                            <a class="--hide-xs --hide-sm" href="#" data-sug="South Africa">South Africa</a>
+                            <a href="#" data-sug="Kenya">Kenya</a>
+                            <a href="#" data-sug="Algeria">Algeria</a>
+                            <a href="#" data-sug="Sudan">Sudan</a>
+                            <a class="--hide-xs" href="#" data-sug="Morocco">Morocco</a>
+                            <a class="--hide-xs --hide-sm" href="#" data-sug="Mozambique">Mozambique</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer-content">
+            <div>Copyright &copy; 2020 EED Ltd. All Rights Reserved</div>
+        </div>
+    </footer>
+
+    <script src="./js/vendor/jquery/jquery.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

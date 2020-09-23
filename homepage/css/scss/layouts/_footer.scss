@@ -1,0 +1,18 @@
+footer#footer {
+    background-color: #161f37;
+    margin-top: 30px;
+    height: 66px;
+
+    .footer-content {
+        height: 100%;
+        color: #afddff;
+        font-family: $montserrat;
+        opacity: 0.75;
+        font-size: 12px;
+        border-top: 0.5px solid rgba(175, 221, 255, 0.2);
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

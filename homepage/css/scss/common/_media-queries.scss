@@ -1,0 +1,52 @@
+$xs: 320px;
+$sm: 450px;
+$md: 1035px;
+$lg: 1440px;
+$xl: 1920px;
+
+$h-sm: 500px;
+$h-sm-md: 667px;
+$h-md: 690px;
+$h-lg: 700px;
+
+@mixin xs {
+    @media screen and (min-width: $xs) {
+        @content;
+    }
+}
+
+@mixin h-sm {
+    @media screen and (min-height: $h-sm) {
+        @content;
+    }
+}
+
+@mixin h-sm-md {
+    @media screen and (min-height: $h-sm-md) {
+        @content;
+    }
+}
+
+@mixin h-md {
+    @media screen and (min-height: $h-md) {
+        @content;
+    }
+}
+
+@mixin h-lg {
+    @media screen and (min-height: $h-lg) {
+        @content;
+    }
+}
+
+@mixin h-lg-w-sm {
+    @media screen and (min-height: $h-lg) and (min-width: $sm) {
+        @content;
+    }
+}
+
+@mixin h-lg-w-md {
+    @media screen and (min-height: $h-lg) and (min-width: $md) {
+        @content;
+    }
+}

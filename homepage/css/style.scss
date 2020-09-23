@@ -1,0 +1,55 @@
+/** ========== VENDOR ============= **/
+@import "./vendor/normalize";
+
+/** ========== FONTS ============= **/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&display=swap");
+
+$roboto: "Roboto", sans-serif;
+$montserrat: "Montserrat", sans-serif;
+
+/** ========== GENERAL ============= **/
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    font-family: $roboto;
+    color: #ffffff;
+    background-image: linear-gradient(180deg, rgba(22, 31, 55, 0.8) 0.11%, #161f37 100%),
+        url(../img/aerial-view-of-city.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+a {
+    color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+/** ========== MAIN STYLE ============= **/
+@import "./scss/index";

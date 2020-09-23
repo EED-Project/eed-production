@@ -1,0 +1,38 @@
+.container,
+#header .container {
+    height: 100%;
+    width: 100%;
+    max-width: 931px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@include h-lg-w-sm {
+    .container {
+        height: auto;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@include h-lg-w-md {
+    .container {
+        max-width: 1031px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #header .container {
+        max-width: 1076px;
+        padding-left: unset;
+        padding-right: unset;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    #header .container {
+        max-width: 1241px;
+    }
+}

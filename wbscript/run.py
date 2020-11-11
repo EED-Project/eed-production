@@ -73,7 +73,8 @@ def init_dataset():
         Indicator_table = data[1:]
 
     # create global Country_table from indicator.cfg
-    with open(os.path.join(SCRIPT_PATH, 'Mcountries.csv'), newline='') as f:
+#    with open(os.path.join(SCRIPT_PATH, 'Mcountries.csv'), newline='') as f:
+    with open(os.path.join(SCRIPT_PATH, 'Mcountriesmini.csv'), newline='') as f:
         reader = csv.reader(f)
         data = list(reader)
         global Country_table

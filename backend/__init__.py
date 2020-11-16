@@ -33,6 +33,6 @@ def create_app(**kwargs):
 
     @app.route("/")
     def index():
-        return app.send_static_file("home.html")
+        return app.send_static_file("index.html")
 
     return app

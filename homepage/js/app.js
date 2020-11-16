@@ -18,7 +18,6 @@ function suggestionElementClickHandler(e) {
 
     const sugValue = e.target.dataset.sug;
     searchInputElement.val(sugValue);
-    window.location.replace("https://eed-app.herokuapp.com/?country="+sugValue);
 }
 
 function searchInputElementInputHandler(e) {

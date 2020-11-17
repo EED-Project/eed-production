@@ -88,9 +88,9 @@ function update_tree_chart(stats, sources, dom_node_id, format_number_func = for
     });
     Highcharts.chart(dom_node_id, {
         chart: {
-            backgroundColor: '#2c263d',
+            backgroundColor: '#212840',
             borderWidth: 0,
-            plotBackgroundColor: '#2c263d',
+            plotBackgroundColor: '#212840',
             plotShadow: false,
             plotBorderWidth: 0,
             style: {
@@ -122,7 +122,7 @@ function update_tree_chart(stats, sources, dom_node_id, format_number_func = for
         series: [{
             type: "treemap",
             borderWidth: 10,
-            borderColor: '#2c263d',
+            borderColor: '#212840',
             layoutAlgorithm: 'squarified',
             data: data,
             dataLabels: {
@@ -196,9 +196,9 @@ function update_area_chart(stats, sources, dom_node_id, font_size = 16, format_n
     Highcharts.setOptions({
         chart: {
             type: "spline",
-            backgroundColor: '#2c263d',
+            backgroundColor: '#212840',
             borderWidth: 0,
-            plotBackgroundColor: '#2c263d',
+            plotBackgroundColor: '#212840',
             plotShadow: false,
             plotBorderWidth: 0,
             style: {
@@ -466,9 +466,9 @@ function update_bar_chart(stats, sources, dom_node_id, font_size = 16, format_nu
     Highcharts.setOptions({
         chart: {
             type: "spline",
-            backgroundColor: '#2c263d',
+            backgroundColor: '#212840',
             borderWidth: 0,
-            plotBackgroundColor: '#2c263d',
+            plotBackgroundColor: '#212840',
             plotShadow: false,
             plotBorderWidth: 0,
             style: {

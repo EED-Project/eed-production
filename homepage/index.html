@@ -13,8 +13,29 @@
 </head>
 
 <body>
+    <div class="homepage__background"></div>
     <header id="header">
         <div class="container">
+            <div id="top__search-box-outer" class="top__search-box-outer">
+                <div class="top__search-box">
+                    <label for="search-input">
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.33341 14C8.81256 13.9997 10.2491 13.5045 11.4142 12.5934L15.0776 16.2567L16.2559 15.0784L12.5926 11.415C13.5042 10.2497 13.9997 8.81288 14.0001 7.33335C14.0001 3.65752 11.0092 0.666687 7.33341 0.666687C3.65758 0.666687 0.666748 3.65752 0.666748 7.33335C0.666748 11.0092 3.65758 14 7.33341 14ZM7.33341 2.33335C10.0909 2.33335 12.3334 4.57585 12.3334 7.33335C12.3334 10.0909 10.0909 12.3334 7.33341 12.3334C4.57591 12.3334 2.33341 10.0909 2.33341 7.33335C2.33341 4.57585 4.57591 2.33335 7.33341 2.33335Z"
+                                fill="#AFDDFF" fill-opacity="0.75" />
+                        </svg>
+                    </label>
+                    <input id="top-search-input" class="input --search" type="text" spellcheck="false"
+                        placeholder="Search a country/region...">
+                    <button type="button" id="top-search-button-close" class="btn-close --search">&times;</button>
+                    
+                    <div id="top-suggestion-dropdown" class="suggestion-dropdown --show">
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+                
             <nav>
                 <div class="logo">
                     <img width="82" height="33" src="./img/svg/logo.svg" alt="LANDINGPAGE logo">
@@ -63,26 +84,17 @@
                         </label>
                         <input id="search-input" class="input --search" type="text" spellcheck="false"
                             placeholder="Search a country/region...">
+                        <button type="button" id="search-button-close" class="btn-close --search">&times;</button>
 
                         <div id="suggestion-dropdown" class="suggestion-dropdown">
-                            <ul>
-                                <li>
-                                    <a href="#" data-sug="Republic of Congo">Republic of Congo</a>
-                                </li>
-                                <li>
-                                    <a href="#" data-sug="República del Congo">República del Congo</a>
-                                </li>
-                                <li>
-                                    <a href="#" data-sug="Democratic Republic of Congo">Democratic Republic of Congo</a>
-                                </li>
-                            </ul>
+                            <ul></ul>
                         </div>
                     </div>
                     <div class="main-content__footer">
                         <h3 class="suggestion-title">Suggestion:</h3>
 
                         <div id="suggestion-list" class="suggestion-list">
-                            <a href="../frontend/index.html" data-sug="Angola">Angola</a>
+                            <a href="#" data-sug="Nigeria">Nigeria</a>
                             <a href="#" data-sug="Ethiopia">Ethiopia</a>
                             <a href="#" data-sug="Egypt">Egypt</a>
                             <a class="--hide-xs" href="#" data-sug="Tanzania">Tanzania</a>

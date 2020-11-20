@@ -1,11 +1,12 @@
 import os
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_from_directory, send_file, render_template, redirect, url_for, request
 
 from backend.admin import setup_admin
 from backend.api import stats_api_bp
 from backend.models import db
 
+app = Flask(__name__)
 
 def create_app(**kwargs):
     app = Flask(__name__, **kwargs)
@@ -33,6 +34,20 @@ def create_app(**kwargs):
 
     @app.route("/")
     def index():
-        return app.send_static_file("index.html")
+        if request.args.get("country") is not None:
+            return render_template('dashboard.html')
+        else:
+            return render_template("index.html")
+        #return render_template('index.html')
+
+
+    '''
+    @app.route("/dashboard/", methods=['GET', 'POST'])
+    def dashboard():
+        a = request.args.get("country")
+        #return app.send_static_file("dashboard.html")
+        #return redirect(url_for('static', filename='dashboard.html/?country=Angola'))
+        return render_template('dashboard.html')
+        '''
 
     return app

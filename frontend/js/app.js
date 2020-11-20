@@ -210,7 +210,7 @@ window.onload = function() {
     $.ajax({
         url: apiURL,
         success: getCountriesApiHandler,
-        // dataType: 'text'
-        dataType: 'jsonp'
+        dataType: 'text'
+        // dataType: 'jsonp'
     });
 }

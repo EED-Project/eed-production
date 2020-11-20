@@ -1,12 +1,14 @@
 import os
 
 from flask import Flask, jsonify, send_from_directory, send_file, render_template, redirect, url_for, request
+from flask_cors import CORS
 
 from backend.admin import setup_admin
 from backend.api import stats_api_bp
 from backend.models import db
 
 app = Flask(__name__)
+CORS(app)
 
 def create_app(**kwargs):
     app = Flask(__name__, **kwargs)

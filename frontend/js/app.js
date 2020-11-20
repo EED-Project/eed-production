@@ -11,7 +11,7 @@ const topSearchButton = $('#top-search-btn'),
 
 /** Global Variable */
 //const apiURL = 'https://cors-anywhere.herokuapp.com/http://eed-app.herokuapp.com/api/countries/';
-const apiURL = '/api/countries/';
+const apiURL = 'api/countries/';
 let countries = [];
 
 

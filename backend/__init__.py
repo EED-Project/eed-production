@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, jsonify, send_from_directory, send_file, render_template, redirect, url_for, request
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 from backend.admin import setup_admin
 from backend.api import stats_api_bp
@@ -9,6 +9,7 @@ from backend.models import db
 
 app = Flask(__name__)
 CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 def create_app(**kwargs):
     app = Flask(__name__, **kwargs)
@@ -42,14 +43,15 @@ def create_app(**kwargs):
             return render_template("index.html")
         #return render_template('index.html')
 
+    @cross_origin(origin='*')
+    def login():
+        return jsonify({'success': 'ok'})
 
-    '''
     @app.route("/dashboard/", methods=['GET', 'POST'])
     def dashboard():
         a = request.args.get("country")
         #return app.send_static_file("dashboard.html")
         #return redirect(url_for('static', filename='dashboard.html/?country=Angola'))
         return render_template('dashboard.html')
-        '''
 
     return app

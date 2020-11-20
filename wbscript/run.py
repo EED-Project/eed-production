@@ -26,8 +26,8 @@ DB_HOST = os.getenv('EED_DB_HOST', 'ec2-52-200-82-50.compute-1.amazonaws.com')
 DB_USER = os.getenv('EED_DB_USER', 'fspvfpzfoieduj')
 DB_PASS = os.getenv('EED_DB_PASS', '2ae9921386cdba5fd724a3e9130b1263dc60533681de8d42be4be8d3ca477116')
 
-START_YEAR = int(os.getenv('EED_START_YEAR', '2010'))
-END_YEAR = int(os.getenv('EED_END_YEAR', '2012'))
+START_YEAR = int(os.getenv('EED_START_YEAR', '1960'))
+END_YEAR = int(os.getenv('EED_END_YEAR', '2010'))
 
 # Function that returns the country_id corresponding to the country name
 def country_translation(name):
@@ -66,14 +66,15 @@ def aggregate_translate(name):
 # Function that pull data from .csv files and put them in global variables Indicator_tbale, Country_table, country_list, indicator_list
 def init_dataset():
     # create global Indicator_table from indicator.cfg
-    with open(os.path.join(SCRIPT_PATH, 'Mindicatorsmini.csv'), newline='') as f:
+    # with open(os.path.join(SCRIPT_PATH, 'Mindicatorsmini.csv'), newline='') as f:
+    with open(os.path.join(SCRIPT_PATH, 'Mindicators.csv'), newline='') as f:
         reader = csv.reader(f)
         data = list(reader)
         global Indicator_table
         Indicator_table = data[1:]
 
     # create global Country_table from indicator.cfg
-#    with open(os.path.join(SCRIPT_PATH, 'Mcountries.csv'), newline='') as f:
+    # with open(os.path.join(SCRIPT_PATH, 'Mcountries.csv'), newline='') as f:
     with open(os.path.join(SCRIPT_PATH, 'Mcountriesmini.csv'), newline='') as f:
         reader = csv.reader(f)
         data = list(reader)

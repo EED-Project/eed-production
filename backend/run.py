@@ -20,11 +20,11 @@ results = list()
 SCRIPT_PATH = os.path.dirname(os.path.realpath(__file__))
 
 # Configure by environment variables
-ROOTDB_NAME = os.getenv('EED_ROOTDB_NAME', 'postgres')
-DB_NAME = os.getenv('EED_DB_NAME', 'test_worldbank')
-DB_HOST = os.getenv('EED_DB_HOST', 'eeddatabase.cqahfk3m8kzy.eu-west-2.rds.amazonaws.com')
-DB_USER = os.getenv('EED_DB_USER', 'postgres')
-DB_PASS = os.getenv('EED_DB_PASS', 'postgres')
+# ROOTDB_NAME = os.getenv('EED_ROOTDB_NAME', 'postgres')
+# DB_NAME = os.getenv('EED_DB_NAME', 'test_worldbank')
+# DB_HOST = os.getenv('EED_DB_HOST', 'ec2-18-208-58-24.compute-1.amazonaws.com')
+# DB_USER = os.getenv('EED_DB_USER', 'postgres')
+# DB_PASS = os.getenv('EED_DB_PASS', 'postgres')
 
 START_YEAR = int(os.getenv('EED_START_YEAR', '2010'))
 END_YEAR = int(os.getenv('EED_END_YEAR', '2012'))

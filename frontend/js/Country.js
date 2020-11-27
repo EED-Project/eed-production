@@ -23,7 +23,7 @@ countryPromise.then(function (data) {
     $('#country_name')
         .text(data.country_name.toUpperCase());
 
-    $('#country_name')
+    $('#country_capital')
         .text(data.capitalcity.toUpperCase());
 
     $('#country_description')

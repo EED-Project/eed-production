@@ -23,6 +23,9 @@ countryPromise.then(function (data) {
     $('#country_name')
         .text(data.country_name.toUpperCase());
 
+    $('#country_name')
+        .text(data.capitalcity.toUpperCase());
+
     $('#country_description')
         .html(data.description);
 
@@ -34,6 +37,15 @@ countryPromise.then(function (data) {
 
     $('.time__info')
         .text(data.time_zone);
+
+    $('#country_map')
+        .attr("src",data.country_map);
+
+    $('#country_flag')
+        .attr("src",data.country_flag);
+
+    $('#country_image')
+        .attr("src",data.country_image);
 
 
     $('main.main').show();

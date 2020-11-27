@@ -316,10 +316,12 @@ header .sidebar {
     display: none;
     top: 100%;
     width: 100%;
+    max-height: 275px;
     padding: 5px 34px;
     background: rgba(40, 54, 80, 1);
     border: 0.5px solid rgba(175, 221, 255, 1);
     border-top: none;
+    overflow-y: auto;
 }
 
 .suggestion-dropdown ul {
@@ -379,11 +381,14 @@ header .sidebar {
 
 .mobile__search-box-outer .mobile-suggestion-dropdown {
     width: 100%;
-    height: 75vh;
+    height: 89vh;
+    max-height: 89vh;
     display: block;
     padding: 5px 34px;
     background: rgba(40, 54, 80, 1);
     border: none;
+    border-top: 0.5px solid rgba(175, 221, 255, 1);
+    overflow-y: auto;
 }
 
 .mobile__search-box-outer .mobile-suggestion-dropdown ul {
@@ -437,7 +442,6 @@ header .sidebar {
     padding-left: 39px;
     background-color: rgba(40, 54, 80, 1);
     border: none;
-    border-bottom: 0.5px solid rgba(175, 221, 255, 1);
     transition: border-color 3ms;
 }
 

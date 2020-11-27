@@ -312,12 +312,14 @@ main.--fullscreen {
 
         .suggestion-dropdown {
             width: 100%;
+            max-height: 275px;
             display: block;
             padding: 5px 34px;
             background: $searchbox-background-color;
             border: $searchbox-border;
             border-top: none;
             border-radius: 0;
+            overflow-y: auto;
 
             ul {
                 margin: 0;

@@ -15,7 +15,8 @@ let mobileSuggestionDropdown = $('#mobile-suggestion-dropdown');
 
 
 /** Global Variable */
-const apiURL = 'https://cors-anywhere.herokuapp.com/http://eed-app.herokuapp.com/api/countries/';
+// const apiURL = 'https://cors-anywhere.herokuapp.com/http://eed-app.herokuapp.com/api/countries/';
+const apiURL = 'api/countries/';
 let countries = [];
 
 
@@ -38,11 +39,11 @@ function hideSearchBox() {
 function hideMobileSearchBox() {
     if(mobileSearchBoxContainer.hasClass('--show')) {
         mobileSearchBoxContainer.removeClass('--show');
-    
+
         // Remove mobile searchbox suggestions
         let mobileSuggestionDropdown = $('#mobile-suggestion-dropdown ul');
         mobileSuggestionDropdown.empty();
-        
+
         // Remove mobile searchbox value
         mobileSearchInput.val("");
         // console.log('hideMobileSearchBox');
@@ -79,27 +80,27 @@ function searchInputElementInputHandler(e) {
     const searchValue = e.target.value.toLowerCase();
 
     if (searchValue.length > 0) {
-        
+
         // Filter countries
         let result = countries.filter(function(country) {
             return country.country_name.toLowerCase().includes(searchValue);
         })
-        
+
         // Initialize suggestion dropdown
         let suggestionDropdown = $('#suggestion-dropdown ul');
         let suggestionDropdownElement = $('#suggestion-dropdown a');
-        
+
         // Unbind click event then empty previous suggestion
         suggestionDropdownElement.off('click');
         suggestionDropdown.empty();
-        
+
         // Populate suggestion dropdown
         if(result.length > 0) {
             for(let i = 0; i < result.length; i++) {
                 const country = result[i];
                 suggestionDropdown.append(`<li><a href="/?country=${country.country_name}" data-sug="${country.country_name}">${country.country_name}</a></li>`);
             }
-            
+
             // Bind click event to new options
             suggestionDropdownElement = $('#suggestion-dropdown a');
             suggestionDropdownElement.on("click", suggestionElementClickHandler);
@@ -107,7 +108,7 @@ function searchInputElementInputHandler(e) {
         else {
             suggestionDropdown.append(`<li><a href="#" data-sug="No match found">No match found</a></li>`);
         }
-        
+
         $('#suggestion-dropdown').addClass('--show');
     } else {
         $('#suggestion-dropdown').removeClass('--show');
@@ -132,27 +133,27 @@ function mobileSearchInputElementInputHandler(e) {
     const searchValue = e.target.value.toLowerCase();
 
     if (searchValue.length > 0) {
-        
+
         // Filter countries
         let result = countries.filter(function(country) {
             return country.country_name.toLowerCase().includes(searchValue);
         })
-        
+
         // Initialize suggestion dropdown
         let mobileSuggestionDropdown = $('#mobile-suggestion-dropdown ul');
         let mobileSuggestionDropdownElement = $('#mobile-suggestion-dropdown a');
-        
+
         // Unbind click event then empty previous suggestion
         mobileSuggestionDropdownElement.off('click');
         mobileSuggestionDropdown.empty();
-        
+
         // Populate suggestion dropdown
         if(result.length > 0) {
             for(let i = 0; i < result.length; i++) {
                 const country = result[i];
                 mobileSuggestionDropdown.append(`<li><a href="/?country=${country.country_name}" data-sug="${country.country_name}">${country.country_name}</a></li>`);
             }
-            
+
             // Bind click event to new options
             mobileSuggestionDropdownElement = $('#mobile-suggestion-dropdown a');
             mobileSuggestionDropdownElement.on("click", mobileSuggestionElementClickHandler);
@@ -165,7 +166,7 @@ function mobileSearchInputElementInputHandler(e) {
         // Initialize suggestion dropdown
         let mobileSuggestionDropdown = $('#mobile-suggestion-dropdown ul');
         let mobileSuggestionDropdownElement = $('#mobile-suggestion-dropdown a');
-        
+
         // Unbind click event then empty previous suggestion
         mobileSuggestionDropdownElement.off('click');
         mobileSuggestionDropdown.empty();
@@ -216,4 +217,3 @@ window.onload = function() {
         dataType: 'text'
     });
 }
-

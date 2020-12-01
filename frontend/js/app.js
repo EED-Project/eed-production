@@ -10,8 +10,8 @@ const topSearchButton = $('#top-search-btn'),
 
 
 /** Global Variable */
-// const apiURL = 'https://cors-anywhere.herokuapp.com/http://eed-app.herokuapp.com/api/countries/';
-const apiURL = 'api/countries/';
+ const apiURL = 'https://cors-anywhere.herokuapp.com/http://eed-app.herokuapp.com/api/countries/';
+//const apiURL = 'api/countries/';
 let countries = [];
 
 
@@ -77,11 +77,11 @@ function topSuggestionElementClickHandler(e) {
 }
 
 function suggestionElementClickHandler(e) {
-    //e.preventDefault();
-    //e.stopPropagation();
+    e.preventDefault();
+    e.stopPropagation();
 
-    //const sugValue = e.target.dataset.sug;
-    //searchInputElement.val(sugValue);
+    const sugValue = e.target.dataset.sug;
+    searchInputElement.val(sugValue);
 
     // console.log('suggestionElementClickHandler was called', sugValue);
 }
@@ -177,9 +177,9 @@ function bodyClickHandler(e) {
 }
 
 function mainContentHomepageClickHandler(e) {
-    // e.stopPropagation();
-    // hideSearchBox();
-    // console.log('mainContentHomepageClickHandler called');
+    e.stopPropagation();
+    hideSearchBox();
+    console.log('mainContentHomepageClickHandler called');
 }
 
 function getCountriesApiHandler(data) {
@@ -213,3 +213,6 @@ window.onload = function() {
         dataType: 'text'
     });
 }
+
+
+

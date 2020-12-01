@@ -16,8 +16,8 @@ let mobileSuggestionDropdown = $('#mobile-suggestion-dropdown');
 
 /** Global Variable */
 // const apiURL = 'https://cors-anywhere.herokuapp.com/';
-const apiURL = 'api/countries/';
-let countries = [];
+// const apiURL = 'api/countries/';
+// let countries = [];
 
 
 /** Utilities */

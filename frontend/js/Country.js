@@ -15,8 +15,8 @@ $('main.main').hide();
 
 var searchParams = new URLSearchParams(window.location.search);
 var country_query = searchParams.get('country');
- var countryPromise = Promise.resolve($.get('/api/countries/' + country_query))
- var countryStatsPromise = Promise.resolve($.get('/api/countries/' + country_query + '/stats'))
+var countryPromise = Promise.resolve($.get('/api/countries/' + country_query))
+var countryStatsPromise = Promise.resolve($.get('/api/countries/' + country_query + '/stats'))
 // var countryPromise = Promise.resolve({"capitalcity":"Luanda","country_flag":"./img/flags/flagAO.svg","country_id":1,"country_image":"./img/countryimage/ciAO.png","country_map":"./img/maps/mapAO.svg","country_name":"Angola","description":"France is a country whose territory consists of metropolitan France in Western Europe and  several overseas regions and territories.\n" +
 //         "The  metropolitan area of France extends from  the Mediterranean Sea to the English Channel and the <br/>searNorth Sea France is a country whose territory consists of metropolitan France in Western Europe and  several overseas regions and territories. The  metropolitan ","iso_id":"AO","language":"English","next_election":null,"prev_election":null,"time_zone":3})
 // var countryStatsPromise = Promise.resolve({

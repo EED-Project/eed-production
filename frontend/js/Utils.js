@@ -171,7 +171,7 @@ function update_tree_chart(stats, sources, dom_node_id, format_number_func = for
 
 
 function update_area_chart(stats, sources, dom_node_id, font_size = 16, format_number_func = format_number) {
-    var ctx = document.getElementById(dom_node_id).getContext("2d");
+    //var ctx = document.getElementById(dom_node_id).getContext("2d");
     let chartContainer = $("#" + dom_node_id);
     datasets = sources.map(function(s) {
         if (s['get_data_fn']) {

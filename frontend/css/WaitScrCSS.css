@@ -97,8 +97,8 @@
     max-width: 100%;
     right: 20%;
 }
-.WaitingScr *{transition: 500ms}
-.WaitingScr {
+#WaitingScr *{transition:300ms}
+#WaitingScr {
     z-index: 9999999999999999999999999;
     position: fixed;
     top: 0;
@@ -106,14 +106,14 @@
     width: 100%;
     height: 100%;
     background-color: #171e38;
-    visibility: hidden;opacity: 0 ;
-transition: 500ms;
-}
-
-
-
-.WaitingScr .active{
-    visibility: visible;opacity: 1;
 
 }
 
+
+
+.ActivateLoading{
+    visibility: visible!important;opacity: 1!important;
+
+}
+
+main.main{display: block!important;}

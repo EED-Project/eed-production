@@ -15,7 +15,7 @@ let mobileSuggestionDropdown = $('#mobile-suggestion-dropdown');
 
 
 /** Global Variable */
- //const apiURL = 'https://cors-anywhere.herokuapp.com/';
+//const apiURL = 'https://cors-anywhere.herokuapp.com/';
 //const apiURL = 'api/countries/';
 
 
@@ -61,73 +61,8 @@ function getCountriesApiHandler(data) {
 }
 
 function suggestionElementClickHandler(e) {
-    $("#WaitingScr").fadeIn(100);
-
-
-    console.log(e.target);
     const sugValue = e.target.dataset.sug;
     searchInput.val(sugValue);
-
-// hide until country data is loaded
-    e.preventDefault();
-
-
-// hide until country data is loaded
-
-    country_query=this.attributes.country_id.nodeValue;
-
-    var countryStatsPromise = Promise.resolve($.get('https://cors-anywhere.herokuapp.com/http://eed-app.herokuapp.com/api/countries/' + country_query + '/stats'));
-
-    var countryPromise = Promise.resolve($.get('https://cors-anywhere.herokuapp.com/http://eed-app.herokuapp.com/api/countries/' + country_query));
-
-    countryPromise.then(function (data) {
-        console.log('Country loaded:', data)
-
-        $('#country_name')
-            .text(data.country_name.toUpperCase());
-
-        $('#country_capital')
-            .text(data.capitalcity.toUpperCase());
-
-        $('#country_description')
-            .html(data.description);
-
-        $('#country_language')
-            .text(data.language);
-
-        $('#country_previous_election')
-            .text(data.prev_election);
-
-        $('.time__info')
-            .text(data.time_zone);
-
-        $('#country_map')
-            .attr("src",data.country_map);
-
-        $('#country_flag')
-            .attr("src",data.country_flag);
-
-        $('#country_image')
-            .attr("src",data.country_image);
-
-
-        $('main.main').show();
-    }, function (err) {
-        console.log('ERR:', err.statusText)
-    })
-
-    countryStatsPromise.then(function (stats) {
-        area = last_no_zero(stats.indicator_values['1100'])
-        $('#country_area')
-            .text(area[1].toLocaleString());
-    })
-    setTimeout(function (){
-
-        $('#WaitingScr').fadeOut(100);
-    }, 1000);
-
-
-
     // console.log('suggestionElementClickHandler was called', sugValue);
 }
 
@@ -164,7 +99,7 @@ function searchInputElementInputHandler(e) {
         if(result.length > 0) {
             for(let i = 0; i < result.length; i++) {
                 const country = result[i];
-                suggestionDropdown.append(`<li><a href="?country=${country.country_name}" country_id="${country.country_id}" data-sug="${country.country_name}">${country.country_name}</a></li>`);
+                suggestionDropdown.append(`<li><a href="/?country=${country.country_name}" data-sug="${country.country_name}">${country.country_name}</a></li>`);
             }
 
             // Bind click event to new options
@@ -219,7 +154,7 @@ function mobileSearchInputElementInputHandler(e) {
         if(result.length > 0) {
             for(let i = 0; i < result.length; i++) {
                 const country = result[i];
-                mobileSuggestionDropdown.append(`<li><a href="/?country=${country.country_name}" country_id="${country.country_id}" data-sug="${country.country_name}">${country.country_name}</a></li>`);
+                mobileSuggestionDropdown.append(`<li><a href="/?country=${country.country_name}" data-sug="${country.country_name}">${country.country_name}</a></li>`);
             }
 
             // Bind click event to new options
@@ -263,7 +198,7 @@ function searchBoxCoverClickHandler(e) {
 
 /** Event Registration */
 burger.addEventListener('mouseover', () => {
-	menuBlock.classList.toggle('menu__block__active');
+    menuBlock.classList.toggle('menu__block__active');
 });
 searchInput.on('focus', searchInputElementFocusHandler);
 searchInput.on('input', searchInputElementInputHandler);

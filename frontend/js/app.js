@@ -10,8 +10,8 @@ const topSearchButton = $('#top-search-btn'),
 
 
 /** Global Variable */
-// const apiURL = 'https://cors-anywhere.herokuapp.com/http://eed-app.herokuapp.com/api/countries/';
-const apiURL = 'api/countries/';
+ const apiURL = 'https://cors-anywhere.herokuapp.com/http://eed-app.herokuapp.com/api/countries/';
+//let apiURL = 'api/countries/';
 let countries = [];
 
 
@@ -67,13 +67,13 @@ function searchButtonCloseClickHandler(e) {
 }
 
 function topSuggestionElementClickHandler(e) {
-    //e.preventDefault();
-    //e.stopPropagation();
+    e.preventDefault();
+    e.stopPropagation();
 
-    //const sugValue = e.target.dataset.sug;
-    //topSearchInputElement.val(sugValue);
+    const sugValue = e.target.dataset.sug;
+    topSearchInputElement.val(sugValue);
 
-    // console.log('topSuggestionElementClickHandler was called', sugValue);
+    console.log('topSuggestionElementClickHandler was called', sugValue);
 }
 
 function suggestionElementClickHandler(e) {
@@ -194,7 +194,7 @@ function getCountriesApiHandler(data) {
 topSearchButton.on("click", topSearchButtonClickHandler);
 topSearchButtonClose.on("click", topSearchButtonCloseClickHandler);
 searchButtonClose.on("click", searchButtonCloseClickHandler);
-//suggestionElement.on("click", suggestionElementClickHandler);
+suggestionElement.on("click", suggestionElementClickHandler);
 topSuggestionDropdown.on("click", topSuggestionDropdownClickHandler);
 searchInputElement.on('input', searchInputElementInputHandler);
 topSearchInputElement.on('input', topSearchInputElementInputHandler);
@@ -213,3 +213,6 @@ window.onload = function() {
         dataType: 'text'
     });
 }
+
+
+

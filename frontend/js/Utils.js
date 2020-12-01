@@ -556,10 +556,11 @@ function update_bar_chart(stats, sources, dom_node_id, font_size = 16, format_nu
         xAxis: {
             minPadding: 0,
             maxPadding: 0,
-            //categories: stats.years,
+            categories: stats.years,
             lineColor: '#42485c',
             lineWidth: 1,
             labels: {
+                step: 5,
                 y: 20,
                 style: {
                     color: labelColor,

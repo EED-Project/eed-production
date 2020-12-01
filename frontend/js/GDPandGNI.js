@@ -1,7 +1,7 @@
 gdp_gni_sources = [
     {
         "source": "GDP",
-         "indicator": '1610',
+        // "indicator": '1610', 
         "get_data_fn": function (stats) {
             return stats.indicator_values['1610'].map(v => v / 1000000)
         },

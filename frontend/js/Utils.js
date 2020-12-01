@@ -39,7 +39,7 @@ function format_number(number, million_suffix = ' million') {
 }
 
 
-// from stackoverflow:
+// from stackoverflow: 
 // https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
 function toCommas(number) {
     return number.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -110,7 +110,7 @@ function update_tree_chart(stats, sources, dom_node_id, format_number_func = for
                         e.preventDefault();
                         let chartExportSymbol = card.find(".highcharts-button-symbol");
                         chartExportSymbol.click();
-                    });
+                    }); 
                 }
             }
         },
@@ -269,7 +269,7 @@ function update_area_chart(stats, sources, dom_node_id, font_size = 16, format_n
                         e.preventDefault();
                         let chartExportSymbol = card.find(".highcharts-button-symbol");
                         chartExportSymbol.click();
-                    });
+                    }); 
                 }
             }
         },
@@ -292,12 +292,12 @@ function update_area_chart(stats, sources, dom_node_id, font_size = 16, format_n
         },
 
         xAxis: {
-            categories: stats.years,
+            //categories: stats.years,
             //categories: [1910, 1932, 1934, 1954, 1962, 1981, 2000],
             lineColor: '#42485c',
             lineWidth: 1,
             labels: {
-                step: 5,
+                //step: 5,
                 y: 20,
                 style: {
                     color: labelColor,
@@ -533,7 +533,7 @@ function update_bar_chart(stats, sources, dom_node_id, font_size = 16, format_nu
                         e.preventDefault();
                         let chartExportSymbol = card.find(".highcharts-button-symbol");
                         chartExportSymbol.click();
-                    });
+                    }); 
                 }
             }
         },
@@ -686,7 +686,7 @@ function update_pair_douhnut(stats, sources, dom_node_id, format_number_func = f
                         e.preventDefault();
                         let chartExportSymbol = card.find(".highcharts-button-symbol");
                         chartExportSymbol.click();
-                    });
+                    }); 
                 }
             }
         },

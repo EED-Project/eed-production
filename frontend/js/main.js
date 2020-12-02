@@ -15,9 +15,9 @@ let mobileSuggestionDropdown = $('#mobile-suggestion-dropdown');
 
 
 /** Global Variable */
- //const apiURL = 'https://cors-anywhere.herokuapp.com/';
-//const apiURL = 'api/countries/';
-
+// const apiURL = 'https://cors-anywhere.herokuapp.com/http://eed-app.herokuapp.com/api/countries/';
+const apiURL = 'api/countries/';
+let countries = [];
 
 
 /** Utilities */
@@ -39,7 +39,6 @@ function hideSearchBox() {
 function hideMobileSearchBox() {
     if(mobileSearchBoxContainer.hasClass('--show')) {
         mobileSearchBoxContainer.removeClass('--show');
-        $('.media-body').removeClass('hidden');
 
         // Remove mobile searchbox suggestions
         let mobileSuggestionDropdown = $('#mobile-suggestion-dropdown ul');
@@ -61,73 +60,8 @@ function getCountriesApiHandler(data) {
 }
 
 function suggestionElementClickHandler(e) {
-    $("#WaitingScr").fadeIn(100);
-
-
-    console.log(e.target);
     const sugValue = e.target.dataset.sug;
     searchInput.val(sugValue);
-
-// hide until country data is loaded
-    e.preventDefault();
-
-
-// hide until country data is loaded
-
-    country_query=this.attributes.country_id.nodeValue;
-
-    var countryStatsPromise = Promise.resolve($.get('https://cors-anywhere.herokuapp.com/http://eed-app.herokuapp.com/api/countries/' + country_query + '/stats'));
-
-    var countryPromise = Promise.resolve($.get('https://cors-anywhere.herokuapp.com/http://eed-app.herokuapp.com/api/countries/' + country_query));
-
-    countryPromise.then(function (data) {
-        console.log('Country loaded:', data)
-
-        $('#country_name')
-            .text(data.country_name.toUpperCase());
-
-        $('#country_capital')
-            .text(data.capitalcity.toUpperCase());
-
-        $('#country_description')
-            .html(data.description);
-
-        $('#country_language')
-            .text(data.language);
-
-        $('#country_previous_election')
-            .text(data.prev_election);
-
-        $('.time__info')
-            .text(data.time_zone);
-
-        $('#country_map')
-            .attr("src",data.country_map);
-
-        $('#country_flag')
-            .attr("src",data.country_flag);
-
-        $('#country_image')
-            .attr("src",data.country_image);
-
-
-        $('main.main').show();
-    }, function (err) {
-        console.log('ERR:', err.statusText)
-    })
-
-    countryStatsPromise.then(function (stats) {
-        area = last_no_zero(stats.indicator_values['1100'])
-        $('#country_area')
-            .text(area[1].toLocaleString());
-    })
-    setTimeout(function (){
-
-        $('#WaitingScr').fadeOut(100);
-    }, 1000);
-
-
-
     // console.log('suggestionElementClickHandler was called', sugValue);
 }
 
@@ -164,7 +98,7 @@ function searchInputElementInputHandler(e) {
         if(result.length > 0) {
             for(let i = 0; i < result.length; i++) {
                 const country = result[i];
-                suggestionDropdown.append(`<li><a href="?country=${country.country_name}" country_id="${country.country_id}" data-sug="${country.country_name}">${country.country_name}</a></li>`);
+                suggestionDropdown.append(`<li><a href="/?country=${country.country_name}" data-sug="${country.country_name}">${country.country_name}</a></li>`);
             }
 
             // Bind click event to new options
@@ -182,18 +116,16 @@ function searchInputElementInputHandler(e) {
 }
 
 function mobileSearchIconClickHandler(e) {
-    $('.media-body').addClass('hidden');
-
     mobileSearchBoxContainer.addClass('--show');
     mobileSearchInput.focus();
     // console.log('mobileSearchIconClickHandler called');
 }
 
 function mobileSuggestionElementClickHandler(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const sugValue = e.target.dataset.sug;
-    mobileSearchInput.val(sugValue);
+    //e.preventDefault();
+    //e.stopPropagation();
+    //const sugValue = e.target.dataset.sug;
+    //mobileSearchInput.val(sugValue);
     // console.log('mobileSuggestionElementClickHandler was called', sugValue);
 }
 
@@ -219,7 +151,7 @@ function mobileSearchInputElementInputHandler(e) {
         if(result.length > 0) {
             for(let i = 0; i < result.length; i++) {
                 const country = result[i];
-                mobileSuggestionDropdown.append(`<li><a href="/?country=${country.country_name}" country_id="${country.country_id}" data-sug="${country.country_name}">${country.country_name}</a></li>`);
+                mobileSuggestionDropdown.append(`<li><a href="/?country=${country.country_name}" data-sug="${country.country_name}">${country.country_name}</a></li>`);
             }
 
             // Bind click event to new options
@@ -285,62 +217,3 @@ window.onload = function() {
         dataType: 'text'
     });
 }
-
-
-
-window.onscroll = function() {myFunction()};
-
-// Get the header
-var header = document.getElementsByTagName("body")[0];
-header.classList.add('OverviewModeHeader');
-var sticky = document.getElementById('overview');
-
-// Get the offset position of the navbar
-var offsetOverview = sticky.offsetTop + sticky.offsetHeight;
-
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-    if (window.pageYOffset > offsetOverview) {
-        header.classList.remove("OverviewModeHeader");
-    } else {
-        header.classList.add("OverviewModeHeader");
-    }
-
-}
-
-
-
-
-
-
-
-var topMenu = $(".mobile-menu"),
-    topMenuHeight = topMenu.outerHeight()+15,
-    // All list items
-    menuItems = topMenu.find("a"),
-    // Anchors corresponding to menu items
-    scrollItems = menuItems.map(function(){
-        var item = $($(this).attr("href"));
-        if (item.length) { return item; }
-    });
-
-// Bind to scroll
-$(window).scroll(function(){
-    // Get container scroll position
-    var fromTop = $(this).scrollTop()+topMenuHeight;
-
-    // Get id of current scroll item
-    var cur = scrollItems.map(function(){
-        fromTop = fromTop + 45;
-        if ($(this).offset().top < fromTop)
-            return this;
-    });
-    // Get the id of the current element
-    cur = cur[cur.length-1];
-    var id = cur && cur.length ? cur[0].id : "";
-    // Set/remove active class
-    menuItems
-        .parent().removeClass("active")
-        .end().filter("[href='#"+id+"']").parent().addClass("active");
-    $(".active")[1].scrollIntoView();
-});

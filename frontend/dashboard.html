@@ -12,38 +12,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="author" href="humans.txt">
-    <link rel="stylesheet" href="css/WaitScrCSS.css">
 </head>
 
 <body>
-<div id="WaitingScr">
-<div class="OutsideHeader">
-    <div class="OutsideLogo">
-        EED
-
-
-    </div>
-    <div class="Spinner_PNG">
-        <img src="img/Spinner.png">
-    </div>
-    <div class="OutsideLoadingText">
-        Loading...
-
-    </div>
-
-</div>
-    <div class="SearchCont">
-        <img src="img/ScrShot.png" class="WaitingImg">
-
-        <script src="./js/vendor/jquery/jquery.js"></script>
-        <script src="./js/app.js"></script>
-    </div>
-    <div class="FooterOutsideCont">
-  <span >
-            The Energy and Economy Database focused on  providing the best current data on African countries
-        </span>
-    </div>
-</div>
     <div class="main__wrap">
         <!-- Header starts -->
         <header>
@@ -66,11 +37,7 @@
                 </div>
                 <div class="right-side">
                     <div id="search__block" class="search__block">
-                        <span id="mobile-search-icon" class="icon-search mobile__search__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M19 19L14.65 14.65" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</span>
+                        <span id="mobile-search-icon" class="icon-search mobile__search__icon"></span>
                         <span class="icon-search search__icon"></span>
                         <input type="text" id="search-input" class="search__input searchbox-style">
                         <button type="button" id="search-input-button-close" class="icon-close"><span>&times;</span></button>
@@ -108,8 +75,8 @@
                     <li><a href="#business">Credit Rating</a></li>
                     <li><a href="#gazEmmisions">Greenhouse Emissions</a></li>
                 </ul>
-                <span class="next-icon active"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
-                <span class="prev-icon active"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+                <span class="next-icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                <span class="prev-icon"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
             </div>
             <div id="mobile__search-container" class="mobile__search-container searchbox-style">
                 <div class="mobile__search-box-outer">
@@ -141,16 +108,13 @@
             <main class='main' style="display: none;">
                 <!-- Header section starts -->
                 <section class="header__section block__bg mb-3 mt-0 first-section" id="overview">
-                    <div class="country_image_cont"><img id='country_image' src="img/image 2.jpg"  alt="" class="header__img"></div>
+                    <img id='country_image' src="img/image 2.jpg" height="378" width="448" alt="" class="header__img">
                     <div class="header__info__block">
                         <div class="media">
+                            <img id='country_flag' src="img/Country Flag.jpg" height="45" width="30" alt="" class="flag">
                             <div class="media-body">
-                                <img id='country_flag' src="img/Country Flag.jpg" height="45" width="30" alt="" class="flag">
-
                                 <h3 id='country_name' class="header__title">FRANCE</h3>
-
                                 <h4 id='country_capital' class="subtitle">Paris</h4>
-
                             </div>
                         </div>
                         <div class="container2">
@@ -181,18 +145,17 @@
                                             <span id="temperature__info" class="small-heading bold">18 C</span>
                                         </div>
                                     </div>
-                                    <div id='country_description' class="header__text row">
-                                        <p>
-                                            France is a country whose territory consists of metropolitan France in Western
-                                            Europe and several overseas regions and territories.
-                                        </p>
-                                        <p>
-                                            The metropolitan area of France extends from the Mediterranean Sea to the English
-                                            Channel and the North Sea
-                                        </p>
-                                    </div>
                                 </div>
-
+                                <div id='country_description' class="header__text">
+                                    <p>
+                                        France is a country whose territory consists of metropolitan France in Western
+                                        Europe and several overseas regions and territories.
+                                    </p>
+                                    <p>
+                                        The metropolitan area of France extends from the Mediterranean Sea to the English
+                                        Channel and the North Sea
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -995,7 +958,6 @@
         <script src='js/links.js'></script>
         <script src="js/main.js"></script>
         <script src="js/relevant.js"></script>
-        <link rel="stylesheet" href="css/WaitScrCSS.css">
     </div>
 </body>
 

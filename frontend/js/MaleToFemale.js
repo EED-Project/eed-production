@@ -40,11 +40,11 @@ countryStatsPromise.then(function (stats) {
         }
     });
 
-    let stat1 = maleToFemaleChart.config.data.datasets[0].data[0];
-    let stat2 = maleToFemaleChart.config.data.datasets[0].data[1]
+    // let stat1 = maleToFemaleChart.config.data.datasets[0].data[0];
+    // let stat2 = maleToFemaleChart.config.data.datasets[0].data[1]
 
-    let legendValue1 = document.getElementById('stat-item-1');
-    legendValue1.innerHTML = `${stat1}%`;
-    let legendValue2 = document.getElementById('stat-item-2');
-    legendValue2.innerHTML = `${stat2}%`;
+    // let legendValue1 = document.getElementById('stat-item-1');
+    // legendValue1.innerHTML = `${stat1}%`;
+    // let legendValue2 = document.getElementById('stat-item-2');
+    // legendValue2.innerHTML = `${stat2}%`;
 });

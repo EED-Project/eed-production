@@ -256,7 +256,7 @@ console.log(datasets[0].data);
         }
 
     });
-    chart_options = {
+/*    chart_options = {
         type: 'line',
         data: {
             labels: stats.years,
@@ -308,7 +308,7 @@ console.log(datasets[0].data);
             },
         }
     };
-    var elSourceChart = new Chart(ctx, chart_options)
+    var elSourceChart = new Chart(ctx, chart_options)*/
 }
 function update_area_charts(stats, sources, dom_node_id, format_number_func = format_number) {
     update_area_chart(stats, sources, dom_node_id, font_size = 16, format_number_func = format_number_func);

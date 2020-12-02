@@ -58,7 +58,7 @@ elcons_sources = [
     },
     {
         "source": "Renewable",
-         "indicator": '1210',
+        // "indicator": '1210',
         "get_data_fn": function (stats) {
             el_cons_total = stats.indicator_values['1260'];
             el_cons_green_percent = stats.indicator_values['1210'];

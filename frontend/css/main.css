@@ -798,6 +798,8 @@ header .sidebar {
 
 .section__info__block {
     position: relative;
+    height: auto !important;
+}
 }
 
 .card-content-center .card {

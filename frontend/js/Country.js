@@ -24,6 +24,9 @@ countryPromise.then(function (data) {
     $('#country_name')
         .text(data.country_name.toUpperCase());
 
+    $('#country_name_nav')
+        .text(data.country_name.toUpperCase());
+
     $('#country_capital')
         .text(data.capitalcity.toUpperCase());
 
@@ -44,6 +47,10 @@ countryPromise.then(function (data) {
 
     $('#country_flag')
         .attr("src",data.country_flag);
+
+    $('#country_flag_nav')
+        .attr("src",data.country_flag);
+
 
     $('#country_image')
         .attr("src",data.country_image);

@@ -634,6 +634,22 @@ header .sidebar {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.fade_out {
+  -webkit-animation: fadeoutelement 200ms linear forwards;
+  animation: fadeoutelement 200ms linear forwards;
+  opacity: 1;
+}
+
+@keyframes fadeoutelement {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .loader-m {
   margin: 80px 0;
 }

@@ -13,7 +13,7 @@
     <link rel="author" href="humans.txt" />
   </head>
 
-  <body data-spy="scroll" data-target=".mobile-nav">
+  <body data-spy="scroll">
     <!-- Page load indication -->
     <script src="./js/loading.js"></script>
 
@@ -104,12 +104,12 @@
         </div>
         <div class="mobile-nav">
           <ul class="mobile-menu">
-            <li><a href="#overview" class="nav-link active">Overview</a></li>
-            <li><a href="#demography" class="nav-link">Demography</a></li>
-            <li><a href="#electricity" class="nav-link">Electricity</a></li>
-            <li><a href="#GDPandGNI" class="nav-link">GDP &amp; GNI</a></li>
-            <li><a href="#business" class="nav-link">Credit Rating</a></li>
-            <li><a href="#gazEmmisions" class="nav-link">Greenhouse Emissions</a></li>
+            <li><a href="#overview_scrol" class="overview_ac nav-link active">Overview</a></li>
+            <li><a href="#demography_scrol" class="demography_ac nav-link">Demography</a></li>
+            <li><a href="#electricity_scrol" class="electricity_ac nav-link">Electricity</a></li>
+            <li><a href="#GDPandGNI_scrol" class="GDPandGNI_ac nav-link">GDP &amp; GNI</a></li>
+            <li><a href="#business_scrol" class="business_ac nav-link">Credit Rating</a></li>
+            <li><a href="#gazEmmisions_scrol" class="gazEmmisions_ac nav-link">Greenhouse Emissions</a></li>
           </ul>
           <span class="next-icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
           <span class="prev-icon"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
@@ -143,6 +143,8 @@
         <!-- Main block starts -->
         <main class="main" style="display: none">
           <!-- Header section starts -->
+          <div id="overview_scrol"></div>
+
           <section class="header__section block__bg mb-3 mt-0 first-section" id="overview">
             <img id="country_image" src="img/def_country.png" alt="" class="header__img" />
             <div class="header__info__block">
@@ -203,6 +205,7 @@
             <!-- InnerMain block starts -->
             <main class="inner-main">
               <!-- Demography starts -->
+              <div id="demography_scrol"></div>
               <section id="demography" class="demography">
                 <h3 class="section__title middle-size__text">Demography</h3>
                 <div class="row m-0 block__bg block__bg__sm card-content-center">
@@ -340,6 +343,7 @@
               </section>
               <!-- Double-sircle-chart ends -->
               <!-- Electricity starts -->
+              <div id="electricity_scrol"></div>
               <section id="electricity" class="electricity">
                 <h3 class="section__title middle-size__text">Electricity and Energy</h3>
                 <div class="row m-0 p-0 card-content-center block__bg__sm block__bg">
@@ -539,6 +543,7 @@
               </section>
               <!-- ElConsumption ends -->
               <!-- GDP-and-GNI starts -->
+              <div id="GDPandGNI_scrol"></div>
               <section id="GDPandGNI" class="demography GDP-and-GNI">
                 <h3 class="section__title middle-size__text">GDP and GNI</h3>
                 <div class="row m-0 p-0 block__bg__sm block__bg card-content-center">
@@ -653,6 +658,7 @@
               </section>
               <!-- GDP-and-GNI ends -->
               <!-- Business starts -->
+              <div id="business_scrol"></div>
               <section id="business" class="electricity el-production business seprate-cards">
                 <h3 class="section__title middle-size__text">Credit and Business</h3>
                 <div class="row m-0 p-0" style="justify-content: space-between">
@@ -717,6 +723,7 @@
               </section>
               <!-- Business ends -->
               <!-- GazEmmisions starts -->
+              <div id="gazEmmisions_scrol"></div>
               <section id="gazEmmisions" class="demography gaz-emmisions">
                 <h3 class="section__title middle-size__text">Greenhouse Gaz Emissions</h3>
                 <div class="row m-0 p-0 card-content-center">
@@ -945,9 +952,9 @@
       <script src="js/main.js"></script>
       <script src="js/relevant.js"></script>
 
-      <script>
-        $('body').scrollspy({ target: '.mobile-nav', offset: 110 });
-      </script>
+      <!-- Scroll waypoints -->
+      <!-- <script src="js/jquery.waypoints.min.js"></script>
+      <script src="js/waypoints.js"></script> -->
     </div>
   </body>
 </html>

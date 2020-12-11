@@ -547,9 +547,21 @@ header .sidebar {
   width: 100% !important;
 }
 
-.header__title__block {
-  display: flex;
-  margin-top: 0;
+.header__info__block {
+  padding: 20px;
+  position: relative;
+  width: 100% !important;
+}
+
+.left-side .media {
+  overflow: hidden;
+  width: 100%;
+}
+#country_name_nav {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 32px;
+  max-height: 64px;
 }
 
 .header__title {
@@ -2149,7 +2161,7 @@ li.highcharts-menu-item {
 
   .right-side {
     justify-content: flex-end;
-    width: 45%;
+    width: 25px;
     padding-right: 0;
   }
 

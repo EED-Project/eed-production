@@ -1,36 +1,3 @@
-// Declaring Map for element handling
-// For more elements add mode ids to Map
-let updateData = new Map();
-updateData.set('#country_population', false);
-
-// Multi Element handling
-for (const [key, value] of updateData.entries()) {
-  $(key).on('DOMSubtreeModified', function () {
-    
-    if (updateData.get(key)) {
-      return;
-    }
-    updateData.set(key, true);
-    updateValues(key);
-    
-  });
-}
-
-//Updating multi elements
-function updateValues(element) {
-  let data_el = $(element);
-  if (!data_el) return;
-  let values = data_el.text().split(' ');
-  if (values.length < 2) return;
-  data_el.html('<b class="number">' + values[0] + '</b>');
-  values.shift();
-  let dataAfter = '';
-  if (data_el.get(0).hasAttribute('data-after')) {
-    dataAfter = data_el.attr('data-after');
-  }
-  data_el.append('<span class="text">' + values.join(' ') + ' ' + dataAfter + '</span>');
-}
-
 function last_no_zero(arr) {
   let rev_arr = arr.slice().reverse();
   for (i in rev_arr) {

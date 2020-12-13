@@ -17,7 +17,7 @@ $(document).ready(function () {
   });
 
   // Mobile Menu
-  /*(function () {
+  (function () {
     let menu = $('.mobile-nav .mobile-menu'),
       menuItems = menu.find('li'),
       menuWidth = menu.width(),
@@ -67,7 +67,7 @@ $(document).ready(function () {
         else menuNextItem.addClass('active');
       }, 300);
     });
-    menuItems.children('a').on('click', function (e) {
+    /*menuItems.children('a').on('click', function (e) {
       e.preventDefault();
       let target = $(this).attr('href');
       target = $(target);
@@ -81,6 +81,6 @@ $(document).ready(function () {
         },
         300
       );
-    });
-  })();*/
+    });*/
+  })();
 });

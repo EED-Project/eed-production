@@ -8,7 +8,7 @@ $('body > div > header > div > div.right-side > div.search__block > input')
 
 
 // hide until country data is loaded
-$('main.main').hide();
+// $('main.main').hide();
 
 var searchParams = new URLSearchParams(window.location.search);
 var country_query = searchParams.get('country');

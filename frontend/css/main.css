@@ -99,7 +99,7 @@ section {
   font-weight: bold;
   font-size: 22px;
   line-height: 27px;
-  margin-left: -5px;
+  margin-left: 0px;
 }
 
 .big-size__text {
@@ -157,7 +157,7 @@ header .sidebar {
 }
 
 .burger {
-  margin: 0 30px 0 0;
+  margin: 0 10px 0 0;
   width: 35px;
   height: 25.9px;
   cursor: pointer;
@@ -426,7 +426,7 @@ header .sidebar {
   margin-top: 10px;
 }
 
-.mobile__search-box label[for='mobile-search-input'] {
+.mobile__search-box label[for="mobile-search-input"] {
   position: absolute;
   top: 0;
   height: 100%;
@@ -439,7 +439,7 @@ header .sidebar {
 .mobile__search-box .mobile-input.--search {
   width: 100%;
   height: 100%;
-  font-size: 12px;
+  font-size: 16px;
   color: #afddff;
   padding-left: 39px;
   background-color: rgba(40, 54, 80, 1);
@@ -538,6 +538,7 @@ header .sidebar {
   object-fit: cover;
   min-width: 315px;
   width: 25%;
+  height: 25%;
   min-height: 378px;
 }
 
@@ -605,7 +606,8 @@ header .sidebar {
   display: block !important;
   position: absolute;
   height: 100%;
-  filter: invert(100%) sepia(1%) saturate(6571%) hue-rotate(181deg) brightness(109%) contrast(101%);
+  filter: invert(100%) sepia(1%) saturate(6571%) hue-rotate(181deg)
+    brightness(109%) contrast(101%);
   left: 0;
   right: 0;
   bottom: 0;
@@ -1917,7 +1919,7 @@ li.highcharts-menu-item {
   .mobile-nav ul li a {
     font-size: 12px;
     font-weight: bold;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     color: #fff;
     padding: 7px 0px;
     display: block;
@@ -2240,6 +2242,7 @@ li.highcharts-menu-item {
     margin: auto auto auto 10px;
   }
   .header__title {
+    font-size: 18px;
     margin-left: 55px;
   }
   .subtitle {
@@ -2260,6 +2263,7 @@ li.highcharts-menu-item {
     position: relative;
     margin-top: -1px;
   }
+
   .main {
     margin-top: 100px;
   }
@@ -2292,7 +2296,8 @@ li.highcharts-menu-item {
     /* width: 100%; */
     width: 100%;
     margin-left: 0;
-    filter: invert(100%) sepia(1%) saturate(6571%) hue-rotate(181deg) brightness(109%) contrast(101%);
+    filter: invert(100%) sepia(1%) saturate(6571%) hue-rotate(181deg)
+      brightness(109%) contrast(101%);
   }
 
   .header__text__block {

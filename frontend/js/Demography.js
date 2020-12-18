@@ -36,7 +36,7 @@ countryStatsPromise.then(function (stats) {
   update_simple_indicator(stats, '2170', '#country_population');
 
   demography_format = function (n) {
-    return format_number(n, (million_suffix = 'm'));
+    return format_number(n, (million_suffix = '  m'));
   };
   update_area_charts(stats, demography_sources, 'demography__chart', (format_number_func = demography_format));
 
@@ -47,7 +47,7 @@ countryStatsPromise.then(function (stats) {
 function update_mil_dem() {
   let country_population = $('#country_population');
   if (!country_population) return;
-  let values = country_population.text().split(' ');
+  let values = country_population.text().split('  ');
   if (values.length < 2) return;
   country_population.html('<b class="number">' + values[0] + '</b>');
   values.shift();

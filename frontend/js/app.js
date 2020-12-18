@@ -3,7 +3,9 @@ const topSearchButton = $('#top-search-btn'),
   topSearchButtonClose = $('#top-search-button-close'),
   searchButtonClose = $('#search-button-close'),
   suggestionElement = $('#suggestion-list a, #suggestion-dropdown a'),
-  topSuggestionDropdown = $('#top-suggestion-dropdown');
+  topSuggestionDropdown = $('#top-suggestion-dropdown'),
+  footer = $('#footer'),
+  header = $('#header');
 (searchInputElement = $('#search-input')), (topSearchInputElement = $('#top-search-input')), (mainContentHomepage = $('#main-content--homepage'));
 
 /** Global Variable */
@@ -13,11 +15,14 @@ let countries = [];
 
 /** Utilities */
 function hideSearchBox() {
+  header.removeClass('--fullscreen')
+  footer.removeClass("--fullscreen");
   $('#main').removeClass('--fullscreen');
   mainContentHomepage.removeClass('--fullscreen');
 }
 
 function hideTopSearchbox() {
+  footer.removeClass("--show");
   const topSearchBoxOuter = $('#top__search-box-outer');
   if (topSearchBoxOuter.hasClass('--show')) {
     hideSearchBox();
@@ -41,6 +46,7 @@ function topSearchButtonClickHandler(e) {
   e.preventDefault();
   e.stopPropagation();
 
+  footer.addClass('--show')
   $('#top__search-box-outer').addClass('--show');
   topSearchInputElement.focus();
 
@@ -118,6 +124,8 @@ function searchInputElementInputHandler(e) {
     }
 
     $('#main').addClass('--fullscreen');
+    header.addClass("--fullscreen");
+    footer.addClass("--fullscreen");
     mainContentHomepage.addClass('--fullscreen');
   } else {
     hideSearchBox();

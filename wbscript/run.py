@@ -108,7 +108,7 @@ def init_dataset():
         country_dict['country_region_ISOid'] = country[7]
         country_dict['country_flag'] = "./img/flags/flag" + country[1] + ".svg"
         country_dict['country_map'] = "./img/maps/map" + country[1] + ".svg"
-        country_dict['country_image'] = "./img/countryimage/ci" + country[1] + ".png"
+        country_dict['country_image'] = "./img/countryimage/ci" + country[1] + ".jpg"
         country_list.append(country_dict)
 
     for indicator in Indicator_table:

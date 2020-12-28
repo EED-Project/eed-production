@@ -63,6 +63,7 @@ countryPromise.then(function (data) {
 
 countryStatsPromise.then(function (stats) {
     area = last_no_zero(stats.indicator_values['1100'])
+    console.log("area: ",area)
     $('#country_area')
         .text(area[1].toLocaleString());
 })
